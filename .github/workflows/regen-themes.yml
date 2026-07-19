@@ -35,6 +35,8 @@ jobs:
             objects.githubusercontent.com:443
             registry.npmjs.org:443
             bun.sh:443
+            release.bun.sh:443
+            release-assets.githubusercontent.com:443
       - name: "📥 Checkout"
         # yamllint disable-line rule:line-length
         uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
