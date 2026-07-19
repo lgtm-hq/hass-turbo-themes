@@ -15,8 +15,11 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 15
     permissions:
+      # write: Renovate pushes update branches and commits
       contents: write
+      # write: Renovate opens dependency dashboard issues
       issues: write
+      # write: Renovate creates and updates dependency PRs
       pull-requests: write
     concurrency:
       group: renovate-${{ github.ref }}
