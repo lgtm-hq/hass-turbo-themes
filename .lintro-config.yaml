@@ -1,0 +1,85 @@
+---
+# Docs/workflows repo; no app sources yet. Lintro is the master configuration
+# source for formatting and quality checks.
+
+enforce:
+  line_length: 88
+
+execution:
+  enabled_tools:
+    - actionlint
+    - gitleaks
+    - osv_scanner
+    - prettier
+    - semgrep
+    - shellcheck
+    - shfmt
+    - taplo
+    - yamllint
+  tool_order: priority
+  fail_fast: false
+  parallel: true
+  auto_install_deps: true
+  exclude:
+    - '.lintro/'
+    - '.venv/'
+
+defaults:
+  prettier:
+    semi: true
+    singleQuote: true
+    tabWidth: 2
+    printWidth: 88
+    trailingComma: es5
+    overrides:
+      - files: '*.md'
+        options:
+          printWidth: 88
+
+  markdownlint:
+    MD013:
+      line_length: 88
+      code_blocks: false
+      tables: false
+
+  yamllint:
+    extends: default
+    rules:
+      comments-indentation: disable
+      comments:
+        min-spaces-from-content: 1
+      truthy:
+        check-keys: true
+      line-length:
+        max: 88
+        allow-non-breakable-inline-mappings: true
+
+  shellcheck:
+    severity: warning
+
+tools:
+  actionlint:
+    enabled: true
+  gitleaks:
+    enabled: true
+  markdownlint:
+    enabled: false
+  mypy:
+    enabled: false
+  osv_scanner:
+    enabled: true
+  prettier:
+    enabled: true
+  ruff:
+    enabled: false
+  semgrep:
+    enabled: true
+  shellcheck:
+    enabled: true
+  shfmt:
+    enabled: true
+  yamllint:
+    enabled: true
+
+ai:
+  enabled: false
