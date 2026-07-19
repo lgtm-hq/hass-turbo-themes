@@ -23,12 +23,12 @@ concurrency:
 jobs:
   auto-tag:
     # yamllint disable-line rule:line-length
-    uses: lgtm-hq/lgtm-ci/.github/workflows/reusable-release-auto-tag.yml@f50044aac41cee98865e6c74b038be72792e5a56
+    uses: lgtm-hq/lgtm-ci/.github/workflows/reusable-release-auto-tag.yml@443a687caa93b3afa306a066aae8d8a2b4e60c3c  # v0.59.0
     with:
       version: ${{ github.event_name == 'workflow_dispatch' && inputs.version || '' }}
       tag-prefix: v
       create-release: true
-      tooling-ref: "f50044aac41cee98865e6c74b038be72792e5a56"
+      tooling-ref: "443a687caa93b3afa306a066aae8d8a2b4e60c3c"  # v0.59.0
       egress-policy: block
       egress-preset: github-tooling
     secrets:
