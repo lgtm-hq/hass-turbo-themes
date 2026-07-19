@@ -1,0 +1,11 @@
+# CODEOWNERS - Define code ownership for pull request reviews
+#
+# Rules are evaluated top-to-bottom; LAST matching pattern wins.
+
+* @lgtm-hq/maintainers @TurboCoder13
+
+/.github/ @lgtm-hq/maintainers
+/themes/ @lgtm-hq/maintainers @TurboCoder13
+/scripts/ @lgtm-hq/maintainers @TurboCoder13
+/README.md @lgtm-hq/maintainers @TurboCoder13
+/CHANGELOG.md @lgtm-hq/maintainers @TurboCoder13
