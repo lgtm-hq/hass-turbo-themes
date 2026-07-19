@@ -51,6 +51,10 @@ defaults:
 tools:
   actionlint:
     enabled: true
+  # tsc needs node_modules, which the quality container never installs
+  # (lgtm-ci#657); type-checking runs via bunx tsc in regen-themes.yml instead.
+  tsc:
+    enabled: false
   gitleaks:
     enabled: true
   markdownlint:
