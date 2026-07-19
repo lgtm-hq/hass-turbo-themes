@@ -13,4 +13,27 @@ when it is available.
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [0.1.0] - 2026-07-19
+
+### Added
+
+- add HACS theme artifact (#8) (78d3583)
 - Seed independent SemVer release automation and upstream provenance notes.
+
+### Changed
+
+- add Home Assistant install guide (#10) (cc1db31)
+- **release**: attach themes artifact and checksum to releases (#14) (c37ba08)
+- add release automation (#9) (79ab588)
+- add org standard onboarding (#11) (f26d886)
+- Initial commit (cbe5c4d)
