@@ -15,9 +15,7 @@ Source = "https://github.com/lgtm-hq/hass-turbo-themes"
 Issues = "https://github.com/lgtm-hq/hass-turbo-themes/issues"
 
 [dependency-groups]
-dev = [
-    "lintro>=0.81.1",
-]
+dev = ["lintro>=0.81.1"]
 
 [tool.lintro]
 line_length = 88

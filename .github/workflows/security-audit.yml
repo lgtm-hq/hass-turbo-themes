@@ -24,7 +24,8 @@ jobs:
     uses: lgtm-hq/lgtm-ci/.github/workflows/reusable-security-audit.yml@443a687caa93b3afa306a066aae8d8a2b4e60c3c  # v0.59.0
     with:
       tooling-ref: '443a687caa93b3afa306a066aae8d8a2b4e60c3c'  # v0.59.0
-      # Org ruleset (checks-hass-turbo-themes): security-audit / 🔐 Security Audit
+      # Org ruleset (checks-hass-turbo-themes):
+      # security-audit / 🔐 Security Audit
       job-name: '🔐 Security Audit'
       # yamllint disable-line rule:line-length
       lintro-image: ghcr.io/lgtm-hq/py-lintro@sha256:95b9fd9d62c3ca1227447467767ec915e78a7eef62282dd18c0b1c02ee4d3887
