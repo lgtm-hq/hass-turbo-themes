@@ -1,28 +1,19 @@
 ---
-# Docs/workflows repo; no app sources yet. Lintro is the master configuration
-# source for formatting and quality checks.
+# Lintro is the master configuration source for formatting and quality checks.
+# Full tool catalog enabled; tools with no matching sources no-op.
 
 enforce:
   line_length: 88
 
 execution:
-  enabled_tools:
-    - actionlint
-    - gitleaks
-    - osv_scanner
-    - prettier
-    - semgrep
-    - shellcheck
-    - shfmt
-    - taplo
-    - yamllint
   tool_order: priority
   fail_fast: false
   parallel: true
   auto_install_deps: true
   exclude:
-    - '.lintro/'
-    - '.venv/'
+    - '.lintro/**'
+    - '.venv/**'
+    - 'node_modules/**'
 
 defaults:
   prettier:
@@ -63,15 +54,15 @@ tools:
   gitleaks:
     enabled: true
   markdownlint:
-    enabled: false
+    enabled: true
   mypy:
-    enabled: false
+    enabled: true
   osv_scanner:
     enabled: true
   prettier:
     enabled: true
   ruff:
-    enabled: false
+    enabled: true
   semgrep:
     enabled: true
   shellcheck:
