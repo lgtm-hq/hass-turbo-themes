@@ -1,0 +1,52 @@
+# SPDX-License-Identifier: MIT
+---
+name: "🎨 Themes - Regen Drift Check"
+
+"on":
+  pull_request:
+  push:
+    branches: [main]
+
+permissions: {}
+
+concurrency:
+  group: regen-themes-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  drift:
+    name: "🎨 Theme Drift Check"
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      # read: checkout only; the drift check never writes
+      contents: read
+    steps:
+      - name: "🛡️ Harden runner"
+        if: runner.os == 'Linux' || runner.environment == 'self-hosted'
+        # yamllint disable-line rule:line-length
+        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920  # v2.20.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            codeload.github.com:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+            bun.sh:443
+            release.bun.sh:443
+            release-assets.githubusercontent.com:443
+      - name: "📥 Checkout"
+        # yamllint disable-line rule:line-length
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
+        with:
+          persist-credentials: false
+      - name: "🥟 Setup Bun"
+        # yamllint disable-line rule:line-length
+        uses: oven-sh/setup-bun@735343b667d3e6f658f44d0eca948eb6282f2b76  # v2.0.2
+        with:
+          bun-version: 1.3.14
+      - name: "🎨 Check theme drift"
+        shell: bash
+        run: scripts/ci/check-theme-drift.sh
