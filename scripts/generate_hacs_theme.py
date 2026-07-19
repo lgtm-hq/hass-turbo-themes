@@ -40,8 +40,9 @@ AUTO_PAIRS = (
 )
 
 ARTIFACT_COMMENT = (
-    "# Temporary artifact until @lgtm-hq/turbo-themes/adapters/home-assistant "
-    "ships; replaced by regen CI (#4)."
+    "# Temporary artifact until @lgtm-hq/turbo-themes/adapters/home-assistant\n"
+    "# ships; replaced by regen CI (#4).\n"
+    "---"
 )
 
 

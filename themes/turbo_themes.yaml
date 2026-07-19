@@ -1,4 +1,6 @@
-# Temporary artifact until @lgtm-hq/turbo-themes/adapters/home-assistant ships; replaced by regen CI (#4).
+# Temporary artifact until @lgtm-hq/turbo-themes/adapters/home-assistant
+# ships; replaced by regen CI (#4).
+---
 
 Bulma Dark:
   primary-color: "#00d1b2"
