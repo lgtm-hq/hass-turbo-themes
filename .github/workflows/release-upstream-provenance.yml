@@ -1,0 +1,48 @@
+# SPDX-License-Identifier: MIT
+---
+name: "🧾 Release - Upstream Provenance"
+
+"on":
+  release:
+    types: [published]
+
+permissions: {}
+
+concurrency:
+  # yamllint disable-line rule:line-length
+  group: release-upstream-provenance-${{ github.repository }}-${{ github.event.release.tag_name }}
+  cancel-in-progress: false
+
+jobs:
+  append-upstream-provenance:
+    name: "🧾 Append upstream provenance"
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: write
+    steps:
+      - name: "🛡️ Harden runner"
+        if: runner.os == 'Linux' || runner.environment == 'self-hosted'
+        # yamllint disable-line rule:line-length
+        uses: step-security/harden-runner@bf7454d06d71f1098171f2acdf0cd4708d7b5920  # v2.20.0
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            codeload.github.com:443
+            objects.githubusercontent.com:443
+            pipelines.actions.githubusercontent.com:443
+      - name: "📥 Checkout release ref"
+        # yamllint disable-line rule:line-length
+        uses: actions/checkout@9c091bb21b7c1c1d1991bb908d89e4e9dddfe3e0  # v7.0.0
+        with:
+          ref: ${{ github.event.release.tag_name }}
+          persist-credentials: false
+      - name: "🧾 Append upstream provenance"
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG_NAME: ${{ github.event.release.tag_name }}
+          UPSTREAM_PACKAGE: "@lgtm-hq/turbo-themes"
+        run: scripts/release/append-upstream-provenance.sh
