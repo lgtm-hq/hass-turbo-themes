@@ -25,6 +25,7 @@ jobs:
     # yamllint disable-line rule:line-length
     uses: lgtm-hq/lgtm-ci/.github/workflows/reusable-release-auto-tag.yml@443a687caa93b3afa306a066aae8d8a2b4e60c3c  # v0.59.0
     with:
+      # yamllint disable-line rule:line-length
       version: ${{ github.event_name == 'workflow_dispatch' && inputs.version || '' }}
       tag-prefix: v
       create-release: true
