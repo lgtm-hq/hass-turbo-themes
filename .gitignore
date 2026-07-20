@@ -1,3 +1,7 @@
 .lintro/
 .venv/
 __pycache__/
+
+# JS/lintro artifacts
+node_modules/
+.lintro/

@@ -6,7 +6,8 @@
   "description": "HACS distribution of Turbo Themes for Home Assistant",
   "license": "MIT",
   "scripts": {
-    "generate": "bun run scripts/generate-themes.ts"
+    "generate": "bun run scripts/generate-themes.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@lgtm-hq/turbo-themes": "0.32.0"
@@ -15,5 +16,9 @@
     "esbuild": "0.28.1",
     "h3": "2.0.1-rc.25",
     "ws": "8.21.1"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.3.14",
+    "typescript": "^7.0.2"
   }
 }

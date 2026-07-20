@@ -4,6 +4,7 @@ name: "🎨 Themes - Regen Drift Check"
 
 "on":
   pull_request:
+  merge_group:
   push:
     branches: [main]
 
@@ -50,3 +51,6 @@ jobs:
       - name: "🎨 Check theme drift"
         shell: bash
         run: scripts/ci/check-theme-drift.sh
+      - name: "🧪 Type-check scripts"
+        shell: bash
+        run: bun run typecheck
