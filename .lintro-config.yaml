@@ -27,14 +27,8 @@ defaults:
         options:
           printWidth: 88
 
-  markdownlint:
-    # Keep a Changelog repeats section headings per version
-    MD024:
-      siblings_only: true
-    MD013:
-      line_length: 88
-      code_blocks: false
-      tables: false
+  # markdownlint rule options live in .markdownlint.json — lintro does not
+  # forward nested rule options (lgtm-hq/py-lintro issue pending)
 
   yamllint:
     extends: default
