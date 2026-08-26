@@ -23,6 +23,12 @@ when it is available.
 
 ### Security
 
+## [0.2.0] - 2026-08-26
+
+### Added
+
+- add org AI review via lgtm-ci reusable (#23) (e1999cf)
+
 ## [0.1.0] - 2026-07-20
 
 ### Added
