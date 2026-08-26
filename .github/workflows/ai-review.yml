@@ -42,4 +42,4 @@ jobs:
       CODEX_API_KEY: ${{ secrets.CODEX_API_KEY }}
       CURSOR_API_KEY: ${{ secrets.CURSOR_API_KEY }}
     with:
-      tooling-ref: "b2254c69f9117457b3232fabf1d2ae640a5f6a08"  # v0.68.0
+      tooling-ref: 'b2254c69f9117457b3232fabf1d2ae640a5f6a08'  # v0.68.0
