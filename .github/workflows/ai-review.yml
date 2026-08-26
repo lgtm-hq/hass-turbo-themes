@@ -12,7 +12,7 @@ name: AI Review
 # here: the same group with cancel-in-progress would let the
 # called workflow cancel the caller.
 
-"on":
+'on':
   pull_request:
     types: [opened, synchronize, reopened, ready_for_review]
 
