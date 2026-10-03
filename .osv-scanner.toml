@@ -1,43 +1,4 @@
 # OSV-Scanner Configuration
 # https://google.github.io/osv-scanner/configuration/
-#
-# Suppress known vulnerabilities that have been assessed and accepted.
-# Each entry must include an expiry date and a reason.
-#
-# These findings are pre-existing on main (bun.lock / astro 6.4.6 stack).
-# Fixes for the astro advisories require a 6 -> 7 major upgrade.
-
-[[IgnoredVulns]]
-id = "GHSA-4g3v-8h47-v7g6"
-ignoreUntil = 2026-10-26
-reason = "astro@6.4.6 — fix is 7.1.0; major upgrade is out of scope for this CI PR"
-
-[[IgnoredVulns]]
-id = "GHSA-7pw4-f3q4-r2p2"
-ignoreUntil = 2026-10-26
-reason = "astro@6.4.6 — fix is 7.0.4; major upgrade is out of scope for this CI PR"
-
-[[IgnoredVulns]]
-id = "GHSA-f48w-9m4c-m7f5"
-ignoreUntil = 2026-10-26
-reason = "astro@6.4.6 — fix is 7.0.6; major upgrade is out of scope for this CI PR"
-
-[[IgnoredVulns]]
-id = "GHSA-5p4m-2wfm-xmqj"
-ignoreUntil = 2026-10-26
-reason = "js-yaml@4.3.0 — transitive via astro 6.4.6; wait for astro 7 upgrade"
-
-[[IgnoredVulns]]
-id = "GHSA-2v37-7h3g-55p8"
-ignoreUntil = 2026-10-26
-reason = "nanoid@3.3.16 — transitive via astro 6.4.6; wait for astro 7 upgrade"
-
-[[IgnoredVulns]]
-id = "GHSA-fxqj-rqcc-2cmp"
-ignoreUntil = 2026-10-26
-reason = "postcss@8.5.20 — transitive via astro 6.4.6; wait for astro 7 upgrade"
-
-[[IgnoredVulns]]
-id = "GHSA-f88m-g3jw-g9cj"
-ignoreUntil = 2026-10-26
-reason = "sharp@0.34.5 — transitive via astro 6.4.6; wait for astro 7 upgrade"
+# Reverified 2026-10-03: all seven previous ignores are obsolete.
+# turbo-themes 0.38.3 removes the build-tool dependency tree from its published package.
