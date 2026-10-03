@@ -44,7 +44,7 @@ are not live Home Assistant screenshots.
 
 ## Theme list
 
-The package currently provides **27 flat themes** plus **8 auto themes**.
+The package currently provides **37 flat themes** plus **8 auto themes**.
 
 Flat themes are explicit light or dark entries:
 
@@ -57,6 +57,12 @@ Flat themes are explicit light or dark entries:
 | `Catppuccin Macchiato` | `catppuccin-macchiato` | dark |
 | `Catppuccin Mocha` | `catppuccin-mocha` | dark |
 | `Dracula` | `dracula` | dark |
+| `Everforest Dark Hard` | `everforest-dark-hard` | dark |
+| `Everforest Dark Soft` | `everforest-dark-soft` | dark |
+| `Everforest Dark` | `everforest-dark` | dark |
+| `Everforest Light Hard` | `everforest-light-hard` | light |
+| `Everforest Light Soft` | `everforest-light-soft` | light |
+| `Everforest Light` | `everforest-light` | light |
 | `GitHub Dark` | `github-dark` | dark |
 | `GitHub Light` | `github-light` | light |
 | `Gruvbox Dark Hard` | `gruvbox-dark-hard` | dark |
@@ -68,6 +74,10 @@ Flat themes are explicit light or dark entries:
 | `Nord` | `nord` | dark |
 | `One Dark` | `one-dark` | dark |
 | `One Light` | `one-light` | light |
+| `Radix Colors Mauve Dark` | `radix-mauve-dark` | dark |
+| `Radix Colors Mauve Light` | `radix-mauve-light` | light |
+| `Radix Colors Slate Dark` | `radix-slate-dark` | dark |
+| `Radix Colors Slate Light` | `radix-slate-light` | light |
 | `Rosé Pine Dawn` | `rose-pine-dawn` | light |
 | `Rosé Pine Moon` | `rose-pine-moon` | dark |
 | `Rosé Pine` | `rose-pine` | dark |

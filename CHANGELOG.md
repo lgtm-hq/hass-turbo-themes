@@ -13,6 +13,10 @@ when it is available.
 
 ### Added
 
+- Ten Home Assistant themes from upstream 0.38.3: Everforest Dark/Light in
+  default, Hard, and Soft variants, plus Radix Colors Mauve/Slate in Dark and
+  Light variants. The pack now includes 37 flat themes and 8 auto themes.
+
 ### Changed
 
 ### Deprecated
