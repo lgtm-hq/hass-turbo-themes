@@ -48,58 +48,58 @@ The package currently provides **37 flat themes** plus **8 auto themes**.
 
 Flat themes are explicit light or dark entries:
 
-| Theme | ID | Appearance |
-| --- | --- | --- |
-| `Bulma Dark` | `bulma-dark` | dark |
-| `Bulma Light` | `bulma-light` | light |
-| `Catppuccin Frappé` | `catppuccin-frappe` | dark |
-| `Catppuccin Latte` | `catppuccin-latte` | light |
-| `Catppuccin Macchiato` | `catppuccin-macchiato` | dark |
-| `Catppuccin Mocha` | `catppuccin-mocha` | dark |
-| `Dracula` | `dracula` | dark |
-| `Everforest Dark Hard` | `everforest-dark-hard` | dark |
-| `Everforest Dark Soft` | `everforest-dark-soft` | dark |
-| `Everforest Dark` | `everforest-dark` | dark |
-| `Everforest Light Hard` | `everforest-light-hard` | light |
-| `Everforest Light Soft` | `everforest-light-soft` | light |
-| `Everforest Light` | `everforest-light` | light |
-| `GitHub Dark` | `github-dark` | dark |
-| `GitHub Light` | `github-light` | light |
-| `Gruvbox Dark Hard` | `gruvbox-dark-hard` | dark |
-| `Gruvbox Dark Soft` | `gruvbox-dark-soft` | dark |
-| `Gruvbox Dark` | `gruvbox-dark` | dark |
-| `Gruvbox Light Hard` | `gruvbox-light-hard` | light |
-| `Gruvbox Light Soft` | `gruvbox-light-soft` | light |
-| `Gruvbox Light` | `gruvbox-light` | light |
-| `Nord` | `nord` | dark |
-| `One Dark` | `one-dark` | dark |
-| `One Light` | `one-light` | light |
-| `Radix Colors Mauve Dark` | `radix-mauve-dark` | dark |
-| `Radix Colors Mauve Light` | `radix-mauve-light` | light |
-| `Radix Colors Slate Dark` | `radix-slate-dark` | dark |
-| `Radix Colors Slate Light` | `radix-slate-light` | light |
-| `Rosé Pine Dawn` | `rose-pine-dawn` | light |
-| `Rosé Pine Moon` | `rose-pine-moon` | dark |
-| `Rosé Pine` | `rose-pine` | dark |
-| `Solarized Dark` | `solarized-dark` | dark |
-| `Solarized Light` | `solarized-light` | light |
-| `Terminal` | `terminal` | dark |
-| `Tokyo Night Dark` | `tokyo-night-dark` | dark |
-| `Tokyo Night Light` | `tokyo-night-light` | light |
-| `Tokyo Night Storm` | `tokyo-night-storm` | dark |
+| Theme                      | ID                      | Appearance |
+| -------------------------- | ----------------------- | ---------- |
+| `Bulma Dark`               | `bulma-dark`            | dark       |
+| `Bulma Light`              | `bulma-light`           | light      |
+| `Catppuccin Frappé`        | `catppuccin-frappe`     | dark       |
+| `Catppuccin Latte`         | `catppuccin-latte`      | light      |
+| `Catppuccin Macchiato`     | `catppuccin-macchiato`  | dark       |
+| `Catppuccin Mocha`         | `catppuccin-mocha`      | dark       |
+| `Dracula`                  | `dracula`               | dark       |
+| `Everforest Dark Hard`     | `everforest-dark-hard`  | dark       |
+| `Everforest Dark Soft`     | `everforest-dark-soft`  | dark       |
+| `Everforest Dark`          | `everforest-dark`       | dark       |
+| `Everforest Light Hard`    | `everforest-light-hard` | light      |
+| `Everforest Light Soft`    | `everforest-light-soft` | light      |
+| `Everforest Light`         | `everforest-light`      | light      |
+| `GitHub Dark`              | `github-dark`           | dark       |
+| `GitHub Light`             | `github-light`          | light      |
+| `Gruvbox Dark Hard`        | `gruvbox-dark-hard`     | dark       |
+| `Gruvbox Dark Soft`        | `gruvbox-dark-soft`     | dark       |
+| `Gruvbox Dark`             | `gruvbox-dark`          | dark       |
+| `Gruvbox Light Hard`       | `gruvbox-light-hard`    | light      |
+| `Gruvbox Light Soft`       | `gruvbox-light-soft`    | light      |
+| `Gruvbox Light`            | `gruvbox-light`         | light      |
+| `Nord`                     | `nord`                  | dark       |
+| `One Dark`                 | `one-dark`              | dark       |
+| `One Light`                | `one-light`             | light      |
+| `Radix Colors Mauve Dark`  | `radix-mauve-dark`      | dark       |
+| `Radix Colors Mauve Light` | `radix-mauve-light`     | light      |
+| `Radix Colors Slate Dark`  | `radix-slate-dark`      | dark       |
+| `Radix Colors Slate Light` | `radix-slate-light`     | light      |
+| `Rosé Pine Dawn`           | `rose-pine-dawn`        | light      |
+| `Rosé Pine Moon`           | `rose-pine-moon`        | dark       |
+| `Rosé Pine`                | `rose-pine`             | dark       |
+| `Solarized Dark`           | `solarized-dark`        | dark       |
+| `Solarized Light`          | `solarized-light`       | light      |
+| `Terminal`                 | `terminal`              | dark       |
+| `Tokyo Night Dark`         | `tokyo-night-dark`      | dark       |
+| `Tokyo Night Light`        | `tokyo-night-light`     | light      |
+| `Tokyo Night Storm`        | `tokyo-night-storm`     | dark       |
 
 Auto themes use Home Assistant `modes:` entries. Select one auto theme and Home
 Assistant applies its light or dark palette when the frontend switches mode.
 
-| Auto theme | Light mode | Dark mode |
-| --- | --- | --- |
-| `Bulma` | `Bulma Light` | `Bulma Dark` |
-| `Catppuccin` | `Catppuccin Latte` | `Catppuccin Mocha` |
-| `GitHub` | `GitHub Light` | `GitHub Dark` |
-| `Gruvbox` | `Gruvbox Light` | `Gruvbox Dark` |
-| `One` | `One Light` | `One Dark` |
-| `Rosé Pine` | `Rosé Pine Dawn` | `Rosé Pine` |
-| `Solarized` | `Solarized Light` | `Solarized Dark` |
+| Auto theme    | Light mode          | Dark mode          |
+| ------------- | ------------------- | ------------------ |
+| `Bulma`       | `Bulma Light`       | `Bulma Dark`       |
+| `Catppuccin`  | `Catppuccin Latte`  | `Catppuccin Mocha` |
+| `GitHub`      | `GitHub Light`      | `GitHub Dark`      |
+| `Gruvbox`     | `Gruvbox Light`     | `Gruvbox Dark`     |
+| `One`         | `One Light`         | `One Dark`         |
+| `Rosé Pine`   | `Rosé Pine Dawn`    | `Rosé Pine`        |
+| `Solarized`   | `Solarized Light`   | `Solarized Dark`   |
 | `Tokyo Night` | `Tokyo Night Light` | `Tokyo Night Dark` |
 
 ## Picking themes in Home Assistant
