@@ -1,0 +1,17 @@
+# typos configuration for hass-turbo-themes
+# https://github.com/crate-ci/typos
+#
+# Every entry is a deliberate, documented decision; keep the list tight so
+# real typos still fail the check.
+
+[default.extend-words]
+# "hass" is Home Assistant's short name (repo name, HACS docs, workflow names),
+# not a misspelling of "hash".
+hass = "hass"
+
+[files]
+extend-exclude = [
+  # Generated release notes: every entry carries an abbreviated commit SHA
+  # (c37ba08, ...) that typos reads as a misspelled word.
+  "CHANGELOG.md",
+]

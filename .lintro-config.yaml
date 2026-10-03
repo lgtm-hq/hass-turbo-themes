@@ -27,7 +27,7 @@ defaults:
         options:
           printWidth: 88
 
-  # markdownlint rule options live in .markdownlint.json — lintro does not
+  # markdownlint rule options live in .markdownlint-cli2.jsonc — lintro does not
   # forward nested rule options (lgtm-hq/py-lintro issue pending)
 
   yamllint:
