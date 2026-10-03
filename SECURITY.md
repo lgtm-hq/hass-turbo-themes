@@ -2,8 +2,8 @@
 
 ## Supported Versions
 
-This project is pre-release. Security fixes target the default branch until a versioned
-support policy is published.
+This project is pre-release. Security fixes target the default branch until a
+versioned support policy is published.
 
 ## Reporting Security Issues
 
@@ -13,8 +13,8 @@ Please **do not** create public GitHub issues for security vulnerabilities.
 
 1. **GitHub advisory** (preferred):
    [Private security advisory](https://github.com/lgtm-hq/hass-turbo-themes/security/advisories/new)
-2. **Email** (fallback): `security@lgtm-hq.io` with `SECURITY: hass-turbo-themes` in the
-   subject
+2. **Email** (fallback): `security@lgtm-hq.io` with
+   `SECURITY: hass-turbo-themes` in the subject
 
 ### What to Include
 

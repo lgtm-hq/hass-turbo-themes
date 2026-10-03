@@ -21,5 +21,5 @@ uv run lintro chk
 
 ## Security
 
-Do not report vulnerabilities in public issues. See [SECURITY.md](SECURITY.md) for
-private reporting instructions.
+Do not report vulnerabilities in public issues. See [SECURITY.md](SECURITY.md)
+for private reporting instructions.
