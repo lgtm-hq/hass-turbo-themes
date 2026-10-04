@@ -13,10 +13,6 @@ when it is available.
 
 ### Added
 
-- Ten Home Assistant themes from upstream 0.38.3: Everforest Dark/Light in
-  default, Hard, and Soft variants, plus Radix Colors Mauve/Slate in Dark and
-  Light variants. The pack now includes 37 flat themes and 8 auto themes.
-
 ### Changed
 
 ### Deprecated
@@ -26,6 +22,25 @@ when it is available.
 ### Fixed
 
 ### Security
+
+## [0.2.1] - 2026-10-04
+
+### Added
+
+- Ten Home Assistant themes from upstream 0.38.3: Everforest Dark/Light in
+  default, Hard, and Soft variants, plus Radix Colors Mauve/Slate in Dark and
+  Light variants. The pack now includes 37 flat themes and 8 auto themes.
+
+### Changed
+
+- **deps**: pin dependencies (#33) (82c3a54)
+- **ci**: remove dead self-hosted Renovate workflow (#28) (5b668bf)
+- **lintro**: adopt org lintro config baseline (#25) (4a8953b)
+
+### Fixed
+
+- **ci**: bump lgtm-ci to v0.75.2 and drop undeclared scorecards input (#32) (d6fbe69)
+- **deps**: resolve open security advisories (#26) (4bf1377)
 
 ## [0.2.0] - 2026-08-26
 
