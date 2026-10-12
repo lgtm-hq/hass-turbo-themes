@@ -5,7 +5,7 @@
     "": {
       "name": "hass-turbo-themes",
       "dependencies": {
-        "@lgtm-hq/turbo-themes": "0.38.3",
+        "@lgtm-hq/turbo-themes": "0.44.15",
       },
       "devDependencies": {
         "@types/bun": "1.4.2",
@@ -14,7 +14,7 @@
     },
   },
   "packages": {
-    "@lgtm-hq/turbo-themes": ["@lgtm-hq/turbo-themes@0.38.3", "", {}, "sha512-CjEaHw6tqDhVOjMFnlpYQaUFvmfZiVGrkPIt4mKKe/tyGryEnEsAnO023SmWZrKJym065jjev2TznANX8S/ABw=="],
+    "@lgtm-hq/turbo-themes": ["@lgtm-hq/turbo-themes@0.44.15", "", { "bin": { "turbo-themes": "bin/turbo-themes.js" } }, "sha512-CL8bjkrKJBUXx2FDbBls1JLFER/sUDcMAw4fSBkVLa95eWUb70/Z5H6FvFw41nFFXwqjnvWhayo7QX24jwIwbw=="],
 
     "@types/bun": ["@types/bun@1.4.2", "", { "dependencies": { "bun-types": "1.4.2" } }, "sha512-GimotNn7+ZV0uVArItBbriZsR1oNf0+WTzPkdcFrzShI7k2norL0uzEaJT8T33dWr7O/c9ZDuAFQrctKCi72oQ=="],
 
