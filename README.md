@@ -44,12 +44,15 @@ are not live Home Assistant screenshots.
 
 ## Theme list
 
-The package currently provides **37 flat themes** plus **8 auto themes**.
+The package currently provides **43 flat themes** plus **8 auto themes**.
 
 Flat themes are explicit light or dark entries:
 
 | Theme                      | ID                      | Appearance |
 | -------------------------- | ----------------------- | ---------- |
+| `Ayu Dark`                 | `ayu-dark`              | dark       |
+| `Ayu Light`                | `ayu-light`             | light      |
+| `Ayu Mirage`               | `ayu-mirage`            | dark       |
 | `Bulma Dark`               | `bulma-dark`            | dark       |
 | `Bulma Light`              | `bulma-light`           | light      |
 | `Catppuccin Frappé`        | `catppuccin-frappe`     | dark       |
@@ -71,6 +74,9 @@ Flat themes are explicit light or dark entries:
 | `Gruvbox Light Hard`       | `gruvbox-light-hard`    | light      |
 | `Gruvbox Light Soft`       | `gruvbox-light-soft`    | light      |
 | `Gruvbox Light`            | `gruvbox-light`         | light      |
+| `Kanagawa Dragon`          | `kanagawa-dragon`       | dark       |
+| `Kanagawa Lotus`           | `kanagawa-lotus`        | light      |
+| `Kanagawa Wave`            | `kanagawa-wave`         | dark       |
 | `Nord`                     | `nord`                  | dark       |
 | `One Dark`                 | `one-dark`              | dark       |
 | `One Light`                | `one-light`             | light      |
