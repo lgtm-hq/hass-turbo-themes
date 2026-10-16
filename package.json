@@ -10,7 +10,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@lgtm-hq/turbo-themes": "0.44.23"
+    "@lgtm-hq/turbo-themes": "0.44.24"
   },
   "devDependencies": {
     "@types/bun": "1.4.3",
