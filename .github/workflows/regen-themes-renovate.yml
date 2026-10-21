@@ -1,0 +1,142 @@
+# SPDX-License-Identifier: MIT
+---
+name: '🎨 Themes - Renovate Regen'
+
+# Hosted Renovate cannot run postUpgradeTasks, so a @lgtm-hq/turbo-themes bump
+# lands without the regenerated themes/turbo_themes.yaml and the drift check
+# fails. This workflow regenerates the artifact on Renovate PRs and commits it
+# back onto the PR branch as a GitHub-signed App commit.
+#
+# Split on purpose: `regenerate` runs the PR's code (bun install + generate)
+# with a read-only token and no secrets; `commit` holds the App token but never
+# checks out or runs PR code. It only downloads the one regenerated file.
+#
+# Loops: the App push fires a new pull_request event; that run is skipped by
+# the sender guard and would find no diff anyway. Pushes by anyone else
+# (Renovate rebases, operator commits) regenerate again and exit on no diff.
+
+'on':
+  pull_request:
+    types: [opened, synchronize, reopened]
+    paths:
+      - 'package.json'
+      - 'bun.lock'
+
+permissions: {}
+
+# Runs triggered by the App's own push (skipped by the job guards) get a group
+# of their own, so they cannot cancel the run that made the commit while it is
+# still revoking its token.
+concurrency:
+  # yamllint disable-line rule:line-length
+  group: regen-themes-renovate-${{ github.event.sender.login == 'lgtm-release-bot[bot]' && github.run_id || github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  regenerate:
+    name: '🎨 Regenerate themes artifact'
+    if: >-
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      github.event.pull_request.user.login == 'renovate[bot]' &&
+      startsWith(github.event.pull_request.head.ref, 'renovate/') &&
+      github.event.sender.login != 'lgtm-release-bot[bot]'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      # read: checkout only; this job never writes
+      contents: read
+    outputs:
+      changed: ${{ steps.regen.outputs.changed }}
+    steps:
+      - name: '🛡️ Harden runner'
+        if: runner.os == 'Linux' || runner.environment == 'self-hosted'
+        # yamllint disable-line rule:line-length
+        uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            codeload.github.com:443
+            objects.githubusercontent.com:443
+            registry.npmjs.org:443
+            bun.sh:443
+            release.bun.sh:443
+            release-assets.githubusercontent.com:443
+            pipelines.actions.githubusercontent.com:443
+            results-receiver.actions.githubusercontent.com:443
+            *.blob.core.windows.net:443
+      - name: '📥 Checkout PR head'
+        # yamllint disable-line rule:line-length
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          persist-credentials: false
+      - name: '🥟 Setup Bun'
+        # yamllint disable-line rule:line-length
+        uses: oven-sh/setup-bun@0c5077e51419868618aeaa5fe8019c62421857d6 # v2.2.0
+        with:
+          bun-version: 1.4.3
+      - name: '🎨 Regenerate themes'
+        id: regen
+        shell: bash
+        run: scripts/ci/regen-themes-for-pr.sh
+      - name: '📤 Upload regenerated artifact'
+        if: steps.regen.outputs.changed == 'true'
+        # yamllint disable-line rule:line-length
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: turbo-themes-yaml
+          path: themes/turbo_themes.yaml
+          if-no-files-found: error
+          retention-days: 1
+
+  commit:
+    name: '✍️ Commit regenerated themes'
+    needs: regenerate
+    if: needs.regenerate.outputs.changed == 'true'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    # No GITHUB_TOKEN scopes: the write uses the App token minted below.
+    permissions: {}
+    steps:
+      - name: '🛡️ Harden runner'
+        if: runner.os == 'Linux' || runner.environment == 'self-hosted'
+        # yamllint disable-line rule:line-length
+        uses: step-security/harden-runner@dc2769abcc0fcfbadfc1df54081c1608579ef6b2 # v2.22.2
+        with:
+          egress-policy: block
+          allowed-endpoints: >
+            github.com:443
+            api.github.com:443
+            pipelines.actions.githubusercontent.com:443
+            results-receiver.actions.githubusercontent.com:443
+            *.blob.core.windows.net:443
+      - name: '📥 Download regenerated artifact'
+        # yamllint disable-line rule:line-length
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: turbo-themes-yaml
+          path: themes
+      - name: '🔑 Mint App token'
+        id: app-token
+        # yamllint disable-line rule:line-length
+        uses: actions/create-github-app-token@64ab729a6294000f5aa4a4bc0b73d1f32bc45510 # v3.3.0
+        with:
+          app-id: ${{ secrets.RELEASE_APP_ID }}
+          private-key: ${{ secrets.RELEASE_APP_PRIVATE_KEY }}
+          permission-contents: write
+      - name: '✍️ Create signed commit'
+        # GitHub creates and signs the commit (createCommitOnBranch). Append
+        # mode fails this step (red job, nothing written) if the branch moved
+        # after this run started; the newer push triggers its own run.
+        # yamllint disable-line rule:line-length
+        uses: lgtm-hq/lgtm-ci/.github/actions/create-signed-commit@b777111fb3aaa6f09589fb029f0094a05dd76003 # v0.77.7
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          branch: ${{ github.event.pull_request.head.ref }}
+          mode: append
+          expected-head: ${{ github.event.pull_request.head.sha }}
+          message: 'chore(deps): regenerate themes/turbo_themes.yaml'
+          files: |
+            themes/turbo_themes.yaml
