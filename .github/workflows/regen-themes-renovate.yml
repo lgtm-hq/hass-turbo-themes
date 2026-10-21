@@ -24,8 +24,12 @@ name: '🎨 Themes - Renovate Regen'
 
 permissions: {}
 
+# Runs triggered by the App's own push (skipped by the job guards) get a group
+# of their own, so they cannot cancel the run that made the commit while it is
+# still revoking its token.
 concurrency:
-  group: regen-themes-renovate-${{ github.event.pull_request.number }}
+  # yamllint disable-line rule:line-length
+  group: regen-themes-renovate-${{ github.event.sender.login == 'lgtm-release-bot[bot]' && github.run_id || github.event.pull_request.number }}
   cancel-in-progress: true
 
 jobs:
@@ -124,8 +128,8 @@ jobs:
           permission-contents: write
       - name: '✍️ Create signed commit'
         # GitHub creates and signs the commit (createCommitOnBranch). Append
-        # mode fails cleanly if the branch moved after this run started; the
-        # newer push triggers its own run.
+        # mode fails this step (red job, nothing written) if the branch moved
+        # after this run started; the newer push triggers its own run.
         # yamllint disable-line rule:line-length
         uses: lgtm-hq/lgtm-ci/.github/actions/create-signed-commit@b777111fb3aaa6f09589fb029f0094a05dd76003 # v0.77.7
         with:

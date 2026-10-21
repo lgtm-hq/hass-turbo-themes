@@ -13,7 +13,9 @@ bun run generate
 
 # Anything besides the artifact (tracked or untracked, ignoring gitignored
 # paths such as node_modules) means generation touched files it should not.
-unexpected="$(git status --porcelain --untracked-files=all | grep -v -F -x " M ${artifact}" || true)"
+# Capture status first so a git failure aborts instead of reading as "clean".
+status="$(git status --porcelain --untracked-files=all)"
+unexpected="$(printf '%s\n' "${status}" | grep -v -F -x " M ${artifact}" || true)"
 if [[ -n "${unexpected}" ]]; then
 	echo "::error::Regeneration changed files other than ${artifact}:" >&2
 	printf '%s\n' "${unexpected}" >&2
