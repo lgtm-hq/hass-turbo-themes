@@ -40,7 +40,7 @@ jobs:
       github.event.pull_request.user.login == 'renovate[bot]' &&
       startsWith(github.event.pull_request.head.ref, 'renovate/') &&
       github.event.sender.login != 'lgtm-release-bot[bot]'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     permissions:
       # read: checkout only; this job never writes
@@ -95,7 +95,7 @@ jobs:
     name: '✍️ Commit regenerated themes'
     needs: regenerate
     if: needs.regenerate.outputs.changed == 'true'
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-26.04
     timeout-minutes: 10
     # No GITHUB_TOKEN scopes: the write uses the App token minted below.
     permissions: {}
