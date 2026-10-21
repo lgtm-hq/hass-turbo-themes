@@ -1,6 +1,9 @@
 .lintro/
 .venv/
 __pycache__/
+# lgtm-ci reusable-workflow tooling checkout (CI only; keeps osv-scanner
+# --recursive from auditing lgtm-ci's own uv.lock as this repo's dependencies)
+/.lgtm-ci-tooling/
 
 # JS/lintro artifacts
 node_modules/
