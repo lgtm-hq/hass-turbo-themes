@@ -8,6 +8,9 @@
 # "hass" is Home Assistant's short name (repo name, HACS docs, workflow names),
 # not a misspelling of "hash".
 hass = "hass"
+# "certifi" is the Python CA-bundle package (named in .grype.yaml), not a
+# misspelling of "certify".
+certifi = "certifi"
 
 [files]
 extend-exclude = [

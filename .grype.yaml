@@ -1,0 +1,22 @@
+# SPDX-License-Identifier: MIT
+# Grype configuration for the SBOM vulnerability scan (sbom-on-main.yml).
+# Every entry needs a reason, a scope as narrow as possible and a review date.
+---
+ignore:
+  # certifi < 2026.10.19 (GHSA-6q48-6c7w-9gw2, critical: emSign roots with
+  # compromised intermediates). Scoped by location to the lgtm-ci tooling
+  # checkout ONLY: reusable-sbom.yml clones lgtm-ci@v0.77.7 into
+  # .lgtm-ci-tooling/ inside the scanned dir, and its uv.lock still pins
+  # certifi 2026.7.22. That lock is lgtm-ci's, not this repo's; this repo's
+  # uv.lock already pins 2026.10.19 and this rule does not cover it. Fixed on
+  # lgtm-ci main by lgtm-hq/lgtm-ci#1186, shipping in v0.77.8
+  # (lgtm-hq/lgtm-ci#1187). Remove this entry when sbom-on-main.yml moves to
+  # an lgtm-ci release with certifi >= 2026.10.19 (tracked in #60).
+  # Re-verified 2026-10-21; review by 2026-11-21.
+  - vulnerability: GHSA-6q48-6c7w-9gw2
+    reason: lgtm-ci tooling lockfile, not a repo dependency (#60)
+    package:
+      name: certifi
+      version: 2026.7.22
+      type: python
+      location: '/.lgtm-ci-tooling/**'
