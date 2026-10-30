@@ -23,6 +23,18 @@ when it is available.
 
 ### Security
 
+## [0.2.2] - 2026-10-30
+
+### Changed
+
+- **deps**: update dependency bun to 1.4.4 (patch) (#66) (f5f2026)
+- restore block egress policy and pin lgtm-ci v0.79.2 (#75) (17d0a2d)
+
+### Fixed
+
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.56 (patch) (#80) (f68ba03)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.54 (patch) (#78) (f21b913)
+
 ## [0.2.1] - 2026-10-29
 
 ### Added
