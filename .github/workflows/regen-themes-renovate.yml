@@ -131,7 +131,7 @@ jobs:
         # mode fails this step (red job, nothing written) if the branch moved
         # after this run started; the newer push triggers its own run.
         # yamllint disable-line rule:line-length
-        uses: lgtm-hq/lgtm-ci/.github/actions/create-signed-commit@8f0fd9339df5d30a529aa572ceb51345b8be33a0 # v0.79.2
+        uses: lgtm-hq/lgtm-ci/.github/actions/create-signed-commit@c40cd60334b5b5f2952e1af99e2e083be50c1620 # v0.80.0
         with:
           token: ${{ steps.app-token.outputs.token }}
           branch: ${{ github.event.pull_request.head.ref }}
