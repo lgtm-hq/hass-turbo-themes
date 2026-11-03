@@ -23,6 +23,30 @@ when it is available.
 
 ### Security
 
+## [0.2.2] - 2026-11-03
+
+### Changed
+
+- **deps**: update dependency lgtm-hq/lgtm-ci to v0.83.9 (minor) (#76) (d7a24ec)
+- **deps**: lock file maintenance (#89) (b874083)
+- **deps**: update dependency ubuntu to 26.04 (major) (36f9aa0)
+- **deps**: update dependency bun to 1.4.4 (patch) (#66) (f5f2026)
+- restore block egress policy and pin lgtm-ci v0.79.2 (#75) (17d0a2d)
+
+### Fixed
+
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.81 (patch) (#91) (2d48361)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.72 (patch) (#90) (09423ac)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.71 (patch) (#88) (c297f9c)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.67 (patch) (#87) (acbb9be)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.66 (patch) (#86) (862b9be)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.64 (patch) (#85) (d7c3dd7)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.61 (patch) (#84) (0574d09)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.58 (patch) (#83) (17a6faa)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.57 (patch) (#82) (24e9ad8)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.56 (patch) (#80) (f68ba03)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.54 (patch) (#78) (f21b913)
+
 ## [0.2.1] - 2026-10-29
 
 ### Added
