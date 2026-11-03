@@ -16,7 +16,7 @@ concurrency:
 jobs:
   attach-assets:
     name: '📦 Attach release assets'
-    runs-on: ubuntu-26.04
+    runs-on: ${{ vars.LGTM_CI_RUNNER || 'ubuntu-26.04' }}
     timeout-minutes: 10
     permissions:
       # write: uploads the themes artifact and checksum to the release
