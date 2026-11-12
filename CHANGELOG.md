@@ -23,6 +23,27 @@ when it is available.
 
 ### Security
 
+## [0.2.3] - 2026-11-12
+
+### Changed
+
+- **deps**: lock file maintenance (#106) (d3b4379)
+- **deps**: update step-security/harden-runner action to v2.22.4 (patch) (#99) (ea6fc92)
+- **deps**: update dependency lgtm-hq/lgtm-ci to v0.85.0 (minor) (#97) (2c693e9)
+- **deps**: update dependency lgtm-hq/lgtm-ci to v0.84.1 (minor) (#95) (ee0933e)
+- **deps**: update dependency lgtm-hq/lgtm-ci to v0.83.12 (patch) (#94) (373f0d9)
+- **deps**: update dependency lgtm-hq/lgtm-ci to v0.83.10 (patch) (#93) (536ba90)
+- adopt shared runner selection (#92) (79587f4)
+
+### Fixed
+
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.100 (patch) (#107) (17f86b0)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.95 (patch) (#105) (86e8883)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.92 (patch) (#104) (d5e5628)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.89 (patch) (#103) (5fe3fd8)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.84 (patch) (#102) (6885f3a)
+- **deps**: update dependency @lgtm-hq/turbo-themes to 0.44.82 (patch) (#100) (e747ba4)
+
 ## [0.2.2] - 2026-11-03
 
 ### Changed
